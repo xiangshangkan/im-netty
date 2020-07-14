@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.1.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<!-- 项目的坐标信息 (反写的公司网址+项目名) -->
+	<groupId>com.xiangshangkan</groupId>
+	<!-- 建议(项目名+模块名） -->
+	<artifactId>im-netty</artifactId>
+	<!-- 大版本号.分支版本号.小版本号.-->
+	<!--版本类型划分:SNAPSHOT（快照），ALPHA（内侧），BETA（公测），RELEASE（稳定），GA（正式）-->
+	<version>0.0.1-SNAPSHOT</version>
+	<!-- 子模块 -->
+	<modules>
+		<module>im-server</module>
+		<module>im-client</module>
+		<module>im-common</module>
+	</modules>
+	<!-- maven项目打包方式：默认：jar,可指定war,zip、pom 当是组合maven项目中的父项目时必须指定pom -->
+	<packaging>pom</packaging>
+
+	<name>im-netty</name>
+	<!--项目描述-->
+	<description>聚合项目测试-zh</description>
+	<!--开发人员信息-->
+	<developers></developers>
+	<!--许可证信息-->
+	<licenses></licenses>
+	<!--组织信息-->
+	<organization></organization>
+
+	<!-- 依赖版本集中管理 -->
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- netty 框架-->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>4.1.50.Final</version>
+		</dependency>
+		<!-- protobuf 协议通信 -->
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>3.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.10</version>
+		</dependency>
+	</dependencies>
+
+</project>
